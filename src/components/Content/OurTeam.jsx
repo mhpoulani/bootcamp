@@ -29,7 +29,7 @@ export const OurTeam = () => {
       desc: 'Mohammadhossein Poulani graduated from Mazandaran University of Science and Technology in 2023 and, after completing training courses and internships, with great effort and perseverance, he became a frontend developer at Vitruevin Shield. He now has nearly 10 months of international professional experience.'
     },
     {
-      fullName: 'Reza Rafifar',
+      fullName: 'Reza Razifar',
       job: 'Backend Developer',
       image: null,
       desc: "Reza Rafifar holds a bachelor's degree in Computer Engineering from Amol University of Innovative Technologies. Reza started programming in 2018 (before entering university) and managed to enter the job market after a year of effort. Reza has four years of experience working in international companies and has been a senior backend programmer at Vitruevin Shield for a year now."
