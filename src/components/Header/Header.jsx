@@ -3,7 +3,10 @@ import React, { useState } from 'react'
 import bgImage from '../../assets/images/bgHeader.svg'
 import logo from '../../assets/images/logo.svg'
 import { Link, Element } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
+
+    const navigate = useNavigate()
     const fontFamily = 'Suprime'
     const [headerItems, setHeaderItems] = useState(
         [
@@ -170,6 +173,7 @@ const Header = () => {
                         }}
                     >
                         <Button
+                           onClick={()=>navigate('/register')}
                             sx={{
                                 width: '100%',
                                 textTransform: 'none',
@@ -182,7 +186,8 @@ const Header = () => {
                                 fontFamily: `${fontFamily}`,
 
                             }}
-                        >Sign-Up Now</Button>
+                        >Sign-Up Now
+                        </Button>
                         <Link to="courses" smooth={true}>
                             <Button
 
