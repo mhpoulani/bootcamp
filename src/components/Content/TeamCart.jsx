@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 const TeamCart = ({ desc, fullName, image, job }) => {
+    const fontFamily = 'Suprime'
     return (
         <Box
             sx={{
@@ -46,7 +47,9 @@ const TeamCart = ({ desc, fullName, image, job }) => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             overflow: 'hidden',
-                            borderRadius: '50%'
+                            borderRadius: '50%',
+                            fontFamily: `${fontFamily}`,
+
                         }}
                     >
 
@@ -62,6 +65,8 @@ const TeamCart = ({ desc, fullName, image, job }) => {
                         fontWeight: 700,
                         lineHeight: 'normal',
                         textAlign: 'center',
+                        fontFamily: `${fontFamily}`,
+
 
                     }}
                 >
@@ -74,27 +79,31 @@ const TeamCart = ({ desc, fullName, image, job }) => {
                         fontWeight: 500,
                         lineHeight: 'normal',
                         textAlign: 'center',
+                        fontFamily: `${fontFamily}`,
+
 
                     }}
                 >
                     {job}
                 </Typography>
             </Box>
-                <Typography
-                    sx={{
-                        position:'relative',
-                        top:'-3rem',
-                        px:'24px',
-                        mt:'24px',
-                        color: '#fff',
-                        fontSize: '14px',
-                        fontWeight: 400,
-                        lineHeight: 'normal',
-                        textAlign: 'left',
-                    }}
-                >
-                    {desc}
-                </Typography>
+            <Typography
+                sx={{
+                    position: 'relative',
+                    top: '-3rem',
+                    px: '24px',
+                    mt: '24px',
+                    color: '#fff',
+                    fontSize: '14px',
+                    fontWeight: 400,
+                    lineHeight: 'normal',
+                    textAlign: 'left',
+                    fontFamily: `${fontFamily}`,
+
+                }}
+            >
+                {desc}
+            </Typography>
 
         </Box>
     )

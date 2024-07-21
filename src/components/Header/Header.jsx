@@ -4,7 +4,7 @@ import bgImage from '../../assets/images/bgHeader.svg'
 import logo from '../../assets/images/logo.svg'
 import { Link, Element } from 'react-scroll';
 const Header = () => {
-
+    const fontFamily = 'Suprime'
     const [headerItems, setHeaderItems] = useState(
         [
             {
@@ -72,7 +72,7 @@ const Header = () => {
                     pl: '64px',
                     pt: '48px',
                     position: 'fixed',
-                    fontFamily:'Inter',
+                    fontFamily: 'Inter',
                     zIndex: 1400
 
                 }}
@@ -106,7 +106,7 @@ const Header = () => {
                                             color: `${item.id !== 5 && item.id !== 4 && item.id !== 6 ? 'rgba(255, 255, 255, 0.90)' : 'rgba(255, 255, 255, 0.60)'}`,
                                             fontSize: '18px',
                                             fontWeight: 500,
-                                                                fontFamily:'Inter',
+                                            fontFamily: `${fontFamily}`,
 
                                         }}
                                     >
@@ -141,17 +141,21 @@ const Header = () => {
                             fontSize: '32px',
                             color: '#fff',
                             fontWeight: 700,
+                            fontFamily: `${fontFamily}`,
+
 
                         }}
                     >
-                        Welcome to the Professional<br/> Full-Stack Bootcamp
+                        Welcome to the Professional<br /> Full-Stack Bootcamp
                     </Typography>
                     <Typography
                         sx={{
                             color: '#e1e1e1',
                             fontWeight: 400,
                             fontSize: '18px',
-                            mt: '16px'
+                            mt: '16px',
+                            fontFamily: `${fontFamily}`,
+
                         }}
                     >
                         Join our transformative full-stack development bootcamp where you'll master Django, PostgreSQL, and React.js! Dive deep into web development and equip yourself with the skills to build cutting-edge web applications. Don't miss this chance to level up your career in tech.
@@ -160,7 +164,9 @@ const Header = () => {
                         sx={{
                             mt: '32px',
                             display: 'flex',
-                            flexDirection: 'column'
+                            flexDirection: 'column',
+                            fontFamily: `${fontFamily}`,
+
                         }}
                     >
                         <Button
@@ -172,7 +178,9 @@ const Header = () => {
                                 color: '#fff',
                                 borderRadius: '8px',
                                 height: '46px',
-                                background: '#068488'
+                                background: '#068488',
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >Sign-Up Now</Button>
                         <Link to="courses" smooth={true}>
@@ -188,7 +196,9 @@ const Header = () => {
                                     height: '46px',
                                     background: 'rgba(31, 31, 31, 0.15)',
                                     border: '1px solid #00C5CC',
-                                    mt: '8px'
+                                    mt: '8px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 View Plan

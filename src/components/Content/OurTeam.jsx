@@ -5,6 +5,7 @@ import sogandProf from '../../assets/images/sogandProf.jpg'
 import mohammadProf from '../../assets/images/mohammadProf.jpg'
 import TeamCart from './TeamCart'
 export const OurTeam = () => {
+  const fontFamily = 'Suprime'
 
   const teamMembers = [
     {
@@ -36,12 +37,12 @@ export const OurTeam = () => {
   ]
   return (
     <Box
-    id='team'
+      id='team'
       sx={{
         background: `url(${bgOurTeam}) lightgray 0px -0.597px / 100% 111.458% no-repeat`,
 
-        height: {xs:'auto',xl:'810px'},
-        py:{xs:'24px',xl:'0'},
+        height: { xs: 'auto', xl: '810px' },
+        py: { xs: '24px', xl: '0' },
         backgroundSize: 'cover',
         backdropFilter: 'blur(10px)',
 
@@ -66,7 +67,9 @@ export const OurTeam = () => {
           fontWeight: 700,
           color: '#fff',
           textAlign: 'center',
-          pt: '64px'
+          pt: '64px',
+          fontFamily: `${fontFamily}`,
+
 
         }}
       >
@@ -77,8 +80,8 @@ export const OurTeam = () => {
           display: 'flex',
           justifyContent: 'space-evenly',
           mt: '54px',
-          flexWrap:'wrap',
-          gap:'16px'
+          flexWrap: 'wrap',
+          gap: '16px'
         }}
       >
         {

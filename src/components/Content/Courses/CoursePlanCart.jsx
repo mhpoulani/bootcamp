@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 const CoursePlanCart = ({ number, title, titleColor }) => {
+    const fontFamily = 'Suprime'
     return (
         <Box
             sx={{
@@ -41,6 +42,8 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             fontStyle: 'normal',
                             color: '#fff',
                             textAlign: 'center',
+                            fontFamily: `${fontFamily}`,
+
                         }}
                     >
                         Session
@@ -52,6 +55,8 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             fontStyle: 'normal',
                             color: '#fff',
                             textAlign: 'center',
+                            fontFamily: `${fontFamily}`,
+
                         }}
                     >
 
@@ -64,7 +69,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                         fontWeight: 700,
                         fontStyle: 'normal',
                         color: `${titleColor}`,
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        fontFamily: `${fontFamily}`,
+
                     }}
                 >
                     {title}
@@ -78,7 +85,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             sx={{
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Introduction to React.js and its Ecosystem
@@ -92,7 +101,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 fontSize: '12px',
                                 fontWeight: 400,
                                 alignItems: 'center',
-                                pl: '5px'
+                                pl: '5px',
+                                fontFamily: `${fontFamily}`,
+
 
                             }}
                         >
@@ -101,7 +112,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Fase Reviewing of Java Script, HTML, CSS
@@ -111,14 +124,18 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 color: '#fff',
                                 fontSize: '13px',
                                 fontWeight: 500,
-                                mt: '16px'
+                                mt: '16px',
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >React Component Basics</Typography>
                         <Typography
                             sx={{
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >JSX and Component Lifecycle</Typography>
                         <Typography
@@ -130,7 +147,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 fontSize: '12px',
                                 fontWeight: 400,
                                 alignItems: 'center',
-                                pl: '5px'
+                                pl: '5px',
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             <Box
@@ -159,7 +178,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Props and State Management</Typography>
@@ -171,7 +192,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             sx={{
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Overview of Full-Stack Development
@@ -180,7 +203,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             sx={{
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Introduction to Django, PostgreSQL, & React.js
@@ -194,7 +219,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 fontSize: '12px',
                                 fontWeight: 400,
                                 alignItems: 'center',
-                                pl: '5px'
+                                pl: '5px',
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             <Box
@@ -202,7 +229,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Fast Reviewing of Python essentials
@@ -212,7 +241,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 mt: '24px',
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Setting Up the Development Environment
@@ -234,7 +265,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Installing Python, Django, PostgreSQL, and Node.js
@@ -256,7 +289,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Installing Python, Django, PostgreSQL, and Node.js
@@ -266,7 +301,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 mt: '24px',
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Version Control with Git and GitHub
@@ -288,7 +325,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Basic Git Commands
@@ -310,7 +349,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     height: '3px',
                                     width: '3px',
                                     background: '#fff',
-                                    borderRadius: '100px'
+                                    borderRadius: '100px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             ></Box>
                             Creating and Managing Repositories
@@ -325,7 +366,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Introduction to Django Framework
@@ -334,7 +377,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Creating a Django Project and Application
@@ -343,7 +388,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Django Project Structure
@@ -352,7 +399,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Django Models and Migrations
@@ -361,7 +410,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Basic CRUD Operations with Django Admin
@@ -383,7 +434,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Creating Models</Typography>
@@ -404,7 +457,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Running Migrations</Typography>
@@ -418,7 +473,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Introduction to PostgreSQL <br />
@@ -436,7 +493,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -444,7 +503,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Fast Reviewing of SQL Essentials
@@ -460,7 +521,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     mb: '24px',
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Introduction to RESTful APIs
@@ -470,7 +533,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     nmt: '24px',
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Django REST Framework (DRF)
@@ -481,7 +546,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     nmt: '24px',
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
 
@@ -497,7 +564,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -519,7 +588,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -527,7 +598,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Creating Serializers
@@ -541,7 +614,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -549,7 +624,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Building API Views and Endpoints
@@ -565,7 +642,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 State Management with Hooks <br />
@@ -582,7 +661,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -604,7 +685,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -626,7 +709,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -648,7 +733,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                             sx={{
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Introduction to Axios for HTTP Requests <br />
@@ -661,7 +748,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 mt: '30px',
                                 color: '#fff',
                                 fontSize: '13px',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             Handling Authentication and Authorization
@@ -676,7 +765,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 fontSize: '12px',
                                 fontWeight: 400,
                                 alignItems: 'center',
-                                pl: '5px'
+                                pl: '5px',
+                                fontFamily: `${fontFamily}`,
+
                             }}
                         >
                             <Box
@@ -698,7 +789,8 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 fontSize: '12px',
                                 fontWeight: 400,
                                 alignItems: 'center',
-                                pl: '5px'
+                                pl: '5px',
+                                fontFamily: `${fontFamily}`,
                             }}
                         >
                             <Box
@@ -720,7 +812,10 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                 sx={{
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
+
                                 }}
                             >
                                 Preparing Django for Production <br />
@@ -736,7 +831,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -758,7 +855,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -776,7 +875,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     mt: '16px',
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Deploying React Applications
@@ -791,7 +892,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -813,7 +916,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -831,7 +936,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     mt: '16px',
                                     color: '#fff',
                                     fontSize: '13px',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 Best Practices and Final Project Review
@@ -845,7 +952,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -867,7 +976,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                     fontSize: '12px',
                                     fontWeight: 400,
                                     alignItems: 'center',
-                                    pl: '5px'
+                                    pl: '5px',
+                                    fontFamily: `${fontFamily}`,
+
                                 }}
                             >
                                 <Box
@@ -875,7 +986,9 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
                                         height: '3px',
                                         width: '3px',
                                         background: '#fff',
-                                        borderRadius: '100px'
+                                        borderRadius: '100px',
+                                        fontFamily: `${fontFamily}`,
+
                                     }}
                                 ></Box>
                                 Final Project Presentation and Q&A

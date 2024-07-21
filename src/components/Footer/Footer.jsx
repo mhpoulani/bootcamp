@@ -5,8 +5,9 @@ import webIcon from '../../assets/images/webIcon.svg'
 import emailIcon from '../../assets/images/emailIcon.svg'
 import locIcon from '../../assets/images/locIcon.svg'
 import QRCode from '../../assets/images/QRCode.svg'
+import locImage from '../../assets/images/locImage.svg'
 const Footer = () => {
-  const FontFamily = 'Inter'
+  const FontFamily = 'Suprime'
   return (
     <Box sx={{ pt: '56px', pb: '40px', px: '80px' }}>
       <Box sx={{ display: 'flex',flexWrap:'wrap',justifyContent:'space-between' }}>
@@ -90,18 +91,21 @@ const Footer = () => {
               bootcamp@vitruvianshield.com
             </Typography>
           </Box>
+          <a href='https://www.google.com/maps/place/Islamic+Azad+University,+Amol+Branch/@36.4044616,52.4179107,17z/data=!3m1!4b1!4m6!3m5!1s0x3f8f9424028dcbe3:0xf54ae667750d35ec!8m2!3d36.4044616!4d52.4179107!16s%2Fg%2F1pv0v540?entry=ttu'>
+
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
 
             <img src={locIcon} alt="" />
-
+           
             <Typography
               sx={{ color: '#d9d9d9', fontSize: '12px', fontWeight: 400, fontFamily: `${FontFamily}` }}
             >
               Amol - University Side Street - Islamic Azad University, Ayatollah Amoli Branch
             </Typography>
           </Box>
+          </a>
         </Box>
-        {/* <Box sx={{ display: 'flex', flexDirection: 'column', width: '20%', borderRight: '1px solid #181818' }} >
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '20%', borderRight: '1px solid #181818' }} >
           <Typography
             sx={{
               color: '#fff',
@@ -111,8 +115,13 @@ const Footer = () => {
               mb: '16px'
             }}
           >Azad University Location </Typography>
+          <Box sx={{cursor:'pointer'}}>
+            <a href="https://www.google.com/maps/place/Islamic+Azad+University,+Amol+Branch/@36.4044616,52.4179107,17z/data=!3m1!4b1!4m6!3m5!1s0x3f8f9424028dcbe3:0xf54ae667750d35ec!8m2!3d36.4044616!4d52.4179107!16s%2Fg%2F1pv0v540?entry=ttu">
 
-        </Box> */}
+            <img src={locImage} alt="" />
+            </a>
+          </Box>
+        </Box>
         <Box>
           <Typography
             sx={{

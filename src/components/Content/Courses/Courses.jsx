@@ -4,6 +4,7 @@ import bgFooter from '../../../assets/images/bgFooter.svg'
 import CoursePlanCart from './CoursePlanCart'
 
 const Courses = () => {
+  const fontFamily = 'Suprime'
 
   const courses = [
 
@@ -75,7 +76,9 @@ const Courses = () => {
           fontWeight: 700,
           lineHeight: 'normal',
           textAlign: 'center',
-          pt: '20px'
+          pt: '20px',
+          fontFamily: `${fontFamily}`,
+
         }}
       >
         COURSE PLAN
