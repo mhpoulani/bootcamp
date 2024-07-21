@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 import BgRegistration from '../../assets/images/BgRegistration.svg'
 import registerLogo from '../../assets/images/registerLogo.svg'
 import TextFiled from './TextFiled'
+import { useNavigate } from 'react-router-dom'
 const Register = () => {
+  const navigate=useNavigate()
   const fontFamily = 'Suprime'
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -178,6 +180,7 @@ const Register = () => {
             </Box>
             <Box sx={{ mt: '30px' }}>
               <Button
+              onClick={()=>navigate('/inforMationForPayment')}
                 sx={{
                   color: '#fff',
                   fontSize: '16px',
