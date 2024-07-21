@@ -57,15 +57,15 @@ const Footer = () => {
   ]
   return (
     <Box
-    id='courses'
+      id='courses'
       sx={{
         background: `linear-gradient(180deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.18) 12.5%), url(${bgFooter}) lightgray 50% / cover no-repeat`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height: '800px',
-        pt: '40px',
-        px: '64px'
+        height: { xs: 'auto', xl: '800px' },
+        py: '40px',
+        px: '100px'
       }}
     >
       <Typography
@@ -83,9 +83,9 @@ const Footer = () => {
       <Box
         sx={{
           display: 'flex',
-          justifyContent:'start',
-          gap:'13px',
-          flexWrap:'wrap'
+          justifyContent: 'center',
+          gap: '13px',
+          flexWrap: 'wrap'
         }}
         mt='24px'>
         {

@@ -6,7 +6,7 @@ const EhealthPlatform = () => {
     <Box
       id='company'
       sx={{
-        height: '416px',
+        height: {xs:'auto',xl:'416px'},
         background: 'linear-gradient(90deg, rgba(31, 31, 31, 0.80) 0%, rgba(74, 74, 74, 0.80) 100%)',
         boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.14)',
         py: '32px',

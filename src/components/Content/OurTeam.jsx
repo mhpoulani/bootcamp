@@ -40,8 +40,8 @@ export const OurTeam = () => {
       sx={{
         background: `url(${bgOurTeam}) lightgray 0px -0.597px / 100% 111.458% no-repeat`,
 
-        height: {xs:'auto',md:'810px'},
-        py:{xs:'24px',md:'0'},
+        height: {xs:'auto',xl:'810px'},
+        py:{xs:'24px',xl:'0'},
         backgroundSize: 'cover',
         backdropFilter: 'blur(10px)',
 
@@ -77,7 +77,8 @@ export const OurTeam = () => {
           display: 'flex',
           justifyContent: 'space-evenly',
           mt: '54px',
-          flexWrap:'wrap'
+          flexWrap:'wrap',
+          gap:'16px'
         }}
       >
         {

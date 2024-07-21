@@ -35,15 +35,9 @@ const Header = () => {
 
 
             },
+
             {
                 id: 5,
-                name: 'Education partners ',
-                select: false,
-                disable: true
-
-            },
-            {
-                id: 6,
                 name: 'Courses',
 
                 select: false
@@ -78,6 +72,7 @@ const Header = () => {
                     pl: '64px',
                     pt: '48px',
                     position: 'fixed',
+                    fontFamily:'Inter',
                     zIndex: 1400
 
                 }}
@@ -110,7 +105,9 @@ const Header = () => {
                                         sx={{
                                             color: `${item.id !== 5 && item.id !== 4 && item.id !== 6 ? 'rgba(255, 255, 255, 0.90)' : 'rgba(255, 255, 255, 0.60)'}`,
                                             fontSize: '18px',
-                                            fontWeight: 500
+                                            fontWeight: 500,
+                                                                fontFamily:'Inter',
+
                                         }}
                                     >
 
@@ -147,7 +144,7 @@ const Header = () => {
 
                         }}
                     >
-                        Welcome to the Professional Full-Stack Bootcamp
+                        Welcome to the Professional<br/> Full-Stack Bootcamp
                     </Typography>
                     <Typography
                         sx={{
