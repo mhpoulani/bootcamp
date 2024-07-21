@@ -1,7 +1,8 @@
 @font-face {
-  src: url('../src/assets/fonts/Supreme_Complete/Fonts/TTF/Supreme-Variable.ttf') format('woff');
-  font-family: Suprime;
-  /* Add more src entries for different font formats */
+  font-family: 'Suprime';
+  src: local('fonts'), url(./assets/fonts/Supreme_Complete/Fonts/TTF/Supreme-Variable.ttf) format('ttf');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
 }
 
 
@@ -19,11 +20,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Suprime;
+  font-family: 'Suprime';
 }
 
 
 body {
   margin: 0;
   padding: 0;
+    font-family: 'Suprime';
+
 }

@@ -1,101 +1,153 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import bgFooter from '../../assets/images/bgFooter.svg'
-import CoursePlanCart from './CoursePlanCart'
-
+import uniLogo from '../../assets/images/uniLogo.svg'
+import webIcon from '../../assets/images/webIcon.svg'
+import emailIcon from '../../assets/images/emailIcon.svg'
+import locIcon from '../../assets/images/locIcon.svg'
+import QRCode from '../../assets/images/QRCode.svg'
 const Footer = () => {
-
-  const courses = [
-
-    {
-      id: 1,
-      title: 'Introduction to Full-Stack Development',
-      titleColor: '#00C5CC'
-
-    },
-    {
-      id: 2,
-      title: 'Django Basics and Project Setup',
-      titleColor: '#5DE2AE'
-    },
-    {
-      id: 3,
-      title: 'PostgreSQL Integration with Django',
-      titleColor: '#F9F871'
-    },
-    {
-      id: 4,
-      title: 'Building RESTful APIs with Django',
-      titleColor: '#8FEC97'
-    },
-    {
-      id: 5,
-      title: 'Introduction to React.js',
-      titleColor: '#A7ACF6'
-
-    },
-    {
-      id: 6,
-      title: 'Advanced React.js Concepts',
-      titleColor: '#BC6ACC'
-
-    },
-    {
-      id: 7,
-      title: 'Integrating Frontend and Backend',
-      titleColor: '#FF8946'
-
-    },
-    {
-      id: 8,
-      title: 'Deployment and Best Practices',
-      titleColor: '#E070BB'
-
-    },
-
-
-  ]
+  const FontFamily = 'Inter'
   return (
-    <Box
-      id='courses'
-      sx={{
-        background: `linear-gradient(180deg, rgba(31, 31, 31, 0.72) 0%, rgba(31, 31, 31, 0.18) 12.5%), url(${bgFooter}) lightgray 50% / cover no-repeat`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        height: { xs: 'auto', xl: '800px' },
-        py: '40px',
-        px: '100px'
-      }}
-    >
-      <Typography
-        sx={{
-          fontSize: '32px',
-          color: '#fff',
-          fontWeight: 700,
-          lineHeight: 'normal',
-          textAlign: 'center',
-          pt: '20px'
-        }}
-      >
-        COURSE PLAN
-      </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '13px',
-          flexWrap: 'wrap'
-        }}
-        mt='24px'>
-        {
-          courses.map((item, index) => {
-            return (
+    <Box sx={{ pt: '56px', pb: '40px', px: '80px' }}>
+      <Box sx={{ display: 'flex',flexWrap:'wrap',justifyContent:'space-between' }}>
 
-              <CoursePlanCart key={index} number={item.id} title={item.title} titleColor={item.titleColor} />
-            )
-          })
-        }
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '10%', borderRight: '1px solid #181818' }}>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 500,
+              fontFamily: `${FontFamily}`,
+              mb: '16px'
+            }}
+          >Partners </Typography>
+          <Box>
+            <img src={uniLogo} alt="" />
+          </Box>
+
+
+        </Box>
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '15%', borderRight: '1px solid #181818' }}>
+          <Box>
+            <Typography
+              sx={{
+                color: '#fff',
+                fontSize: '14px',
+                fontWeight: 500,
+                fontFamily: `${FontFamily}`,
+                mb: '18px'
+              }}
+            >
+              Bootcamp Poster
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: `${FontFamily}`,
+                color: '#00C5CC',
+                fontSize: '12px',
+                fontWeight: 400
+              }}
+            >English</Typography>
+            <Typography
+              sx={{
+                fontFamily: `${FontFamily}`,
+                color: '#00C5CC',
+                fontSize: '12px',
+                fontWeight: 400
+              }}
+            >Farsi</Typography>
+          </Box>
+
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', width: '40%', borderRight: '1px solid #181818' }} >
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 500,
+              fontFamily: `${FontFamily}`,
+              mb: '16px'
+            }}
+          >Get in Touch </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+
+            <img src={webIcon} alt="" />
+
+            <Typography
+              sx={{ color: '#d9d9d9', fontSize: '12px', fontWeight: 400, fontFamily: `${FontFamily}` }}
+            >
+              bootcamp.vitruvianshield.com
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, my: '10px' }}>
+
+            <img src={emailIcon} alt="" />
+
+            <Typography
+              sx={{ color: '#d9d9d9', fontSize: '12px', fontWeight: 400, fontFamily: `${FontFamily}` }}
+            >
+              bootcamp@vitruvianshield.com
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+
+            <img src={locIcon} alt="" />
+
+            <Typography
+              sx={{ color: '#d9d9d9', fontSize: '12px', fontWeight: 400, fontFamily: `${FontFamily}` }}
+            >
+              Amol - University Side Street - Islamic Azad University, Ayatollah Amoli Branch
+            </Typography>
+          </Box>
+        </Box>
+        {/* <Box sx={{ display: 'flex', flexDirection: 'column', width: '20%', borderRight: '1px solid #181818' }} >
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 500,
+              fontFamily: `${FontFamily}`,
+              mb: '16px'
+            }}
+          >Azad University Location </Typography>
+
+        </Box> */}
+        <Box>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 500,
+              fontFamily: `${FontFamily}`,
+              mb: '16px'
+            }}
+          >
+            Scan It
+          </Typography>
+          <Box sx={{
+            border:'1px dashed rgba(255, 255, 255, 0.10)',
+            borderRadius:'8px',
+            px:'10px',
+            py:'10px',
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center'
+          }}>
+              <img src={QRCode} alt="" />
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: '40px' }}>
+        <Typography
+          sx={{
+            color: '#a6a6a6',
+            fontSize: '12px',
+            fontWeight: 300
+          }}
+        >
+          Copyright: Vitruvian Shield
+        </Typography>
       </Box>
     </Box>
   )
