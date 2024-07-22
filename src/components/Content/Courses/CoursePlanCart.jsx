@@ -6,7 +6,7 @@ const CoursePlanCart = ({ number, title, titleColor }) => {
     return (
         <Box
             sx={{
-                height: '314px',
+                height: {xs:'auto',sm:'314px'},
                 width: '316px',
                 background: 'rgba(25, 42, 52, 0.70)',
                 boxShadow: '0px 4px 16px 0px rgba(0, 0, 0, 0.54)',

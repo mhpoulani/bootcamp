@@ -87,8 +87,14 @@ export const OurTeam = () => {
         {
           teamMembers.map((item, index) => {
             return (
+              <Box
+                key={index}
 
-              <TeamCart key={index} desc={item.desc} image={item.image} fullName={item.fullName} job={item.job} />
+              >
+
+                <TeamCart desc={item.desc} image={item.image} fullName={item.fullName} job={item.job} />
+              </Box>
+
             )
           })
         }

@@ -64,7 +64,7 @@ const Courses = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height: { xs: 'auto', xl: '800px' },
+        height: { xs: 'auto', xl: 'auto' },
         py: '40px',
         px: '100px'
       }}
@@ -88,14 +88,23 @@ const Courses = () => {
           display: 'flex',
           justifyContent: 'center',
           gap: '13px',
-          flexWrap: 'wrap'
+          flexWrap: 'wrap',
+          alignItems:'center',
+                            flexGrow:4
+
         }}
         mt='24px'>
         {
           courses.map((item, index) => {
             return (
+              <Box
+                key={index}
+                sx={{
+                }}
+              >
 
-              <CoursePlanCart key={index} number={item.id} title={item.title} titleColor={item.titleColor} />
+                <CoursePlanCart number={item.id} title={item.title} titleColor={item.titleColor} />
+              </Box>
             )
           })
         }

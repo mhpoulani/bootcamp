@@ -2,17 +2,23 @@ import { Box, Typography, Button } from '@mui/material'
 import React, { useState } from 'react'
 import BgRegistration from '../../assets/images/BgRegistration.svg'
 import registerLogo from '../../assets/images/registerLogo.svg'
+import tikBigIcon from '../../assets/images/tikBigIcon.svg'
 import TextFiled from './TextFiled'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import toast from 'react-hot-toast';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+
+
 const Register = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+  const [state, setState] = useState(1)
   const fontFamily = 'Suprime'
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [city, setCity] = useState('')
-
   const inputs = [
     {
       lable: 'First Name ',
@@ -43,7 +49,7 @@ const Register = () => {
     },
     {
       lable: 'Phone Number ',
-      placeHolder: 'Your Phone Number',
+      placeHolder: '+989112223233',
       value: phoneNumber,
       setValue: setPhoneNumber,
       type: 'text',
@@ -60,6 +66,35 @@ const Register = () => {
 
     },
   ]
+
+  const [requierd, setRequierd] = useState({
+    firstName: true,
+    lastName: true,
+    email: false,
+    phoneNumber: true,
+    city: true
+
+  }) 
+   const handleRegister = async () => {
+    const information = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone_number: phoneNumber,
+      city: city
+    }
+
+    const result = await axios.post('https://bootcamp.vitruvianshield.com/api/register', information)
+    console.log(result);
+    if (result.status === 201) {
+      toast.success(result.data.message)
+      setState(2)
+    }
+    else {
+      toast.error(result.data.message)
+    }
+
+  }
   return (
     <Box
       sx={{
@@ -80,9 +115,22 @@ const Register = () => {
       }}
     >
       <Box
+      onClick={()=>navigate(-1)}
+      sx={{
+        position:'absolute',
+        cursor:'pointer',
+        left:'3%',
+        top:'5%',
+        color:'#fff'
+      }}
+      >
+        <KeyboardBackspaceIcon color='inherit'/>
+      </Box>
+      <Box
         sx={{
-          width: { xs: '100%', md:'50%',lg: '60%', xl: '65%' },
-          display: 'flex',
+          width: { xs: '100%', md: '50%', lg: '60%', xl: '65%' },
+
+          display: { xs: `${state === 2 ? 'none' : 'flex'}`, md: 'flex' },
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
@@ -97,7 +145,7 @@ const Register = () => {
         <Typography
           sx={{
             color: '#f1f1f1',
-            fontSize: '32px',
+            fontSize: { xs: '20px', sm: '24px', md: '28px', xl: '32px' },
             fontWeight: 700,
             fontFamily: `${fontFamily}`
           }}
@@ -107,9 +155,10 @@ const Register = () => {
         <Typography
           sx={{
             color: '#fff',
-            fontSize: '32px',
+            fontSize: { xs: '20px', sm: '24px', md: '28px', xl: '32px' },
             fontWeight: 500,
-            fontFamily: `${fontFamily}`
+            fontFamily: `${fontFamily}`,
+            textAlign: 'center'
           }}
         >
           The Professional Full-Stack Bootcamp
@@ -117,9 +166,10 @@ const Register = () => {
         <Typography
           sx={{
             color: '#7AFBFF',
-            fontSize: '18px',
+            fontSize: { xs: '12px', sm: '16px', md: '18px' },
             fontWeight: 400,
-            fontFamily: `${fontFamily}`
+            fontFamily: `${fontFamily}`,
+
 
           }}
         >
@@ -131,7 +181,7 @@ const Register = () => {
           background: 'rgba(31, 31, 31, 0.70)',
           boxShadow: '-4px 0px 36px 0px rgba(0, 0, 0, 0.25)',
           height: '100%',
-          width: { xs: '100%', md: '50%',lg:'40', xl: '35%' },
+          width: { xs: '100%', md: '50%', lg: '40', xl: '35%' },
           px: { xs: '40px', md: '20px', xl: '80px' },
           pt: { xs: '40px', md: '20px', xl: '80px' },
           pb: { xs: '20px', md: '10px', xl: '80px' },
@@ -139,66 +189,149 @@ const Register = () => {
 
         }}
       >
-        <Box
-          sx={{
-            px: { xs: '14px', md: '24px' },
-            pt: { xs: '14px', md: '24px' },
-            pb: { xs: '14px', md: '24px' },
-            height: '100%',
-            boxSizing: 'border-box',
-
-          }}
-        >
-          <Box >
-            <Typography
-              sx={{
-                textAlign: 'center',
-                color: '#00F0F8',
-                fontSize: '32px',
-                fontWeight: 700,
-                fontFamily: `${fontFamily}`
-
-              }}
-            >
-              Join Us
-            </Typography>
+        {
+          state === 1 ? (
             <Box
               sx={{
-                mt: '30px'
+                px: { xs: '14px', md: '24px' },
+                pt: { xs: '14px', md: '24px' },
+                pb: { xs: '14px', md: '24px' },
+                height: '100%',
+                boxSizing: 'border-box',
+
               }}
             >
-              {
-                inputs.map((value, index) => {
-                  return (
-                    <Box key={index} sx={{ mt: '16px' }}>
+              <Box >
+                <Typography
+                  sx={{
+                    textAlign: 'center',
+                    color: '#00F0F8',
+                    fontSize: { xs: '20px', sm: '24px', md: '28px', xl: '32px' },
+                    fontWeight: 700,
+                    fontFamily: `${fontFamily}`
 
-                      <TextFiled value={value.value} setValue={value.setValue} placeholder={value.placeHolder} lable={value.lable} inputname={value.inputName} />
-                    </Box>
-                  )
-                })
-              }
+                  }}
+                >
+                  Join Us
+                </Typography>
+                <Box
+                  sx={{
+                    mt: '30px'
+                  }}
+                >
+                  {
+                    inputs.map((value, index) => {
+                      return (
+                        <Box key={index} sx={{ mt: '16px' }}>
+
+                          <TextFiled requierd={requierd} setRequierd={setRequierd} value={value.value} setValue={value.setValue} placeholder={value.placeHolder} lable={value.lable} inputname={value.inputName} />
+                        </Box>
+                      )
+                    })
+                  }
+                </Box>
+                <Box sx={{ mt: '30px' }}>
+                  <Button
+                    onClick={handleRegister}
+                    sx={{
+                      color: '#fff',
+                      fontSize: '16px',
+                      fontWeight: 700,
+                      fontFamily: `${fontFamily}`,
+                      background: '#068488',
+                      boxShadow: ' 0px 4px 4px 0px rgba(0, 0, 0, 0.16)',
+                      borderRadius: '8px',
+                      height: '46px',
+                      width: '100%',
+                      textTransform: 'none'
+                    }}
+                  >
+                    Register Now
+                  </Button>
+                </Box>
+              </Box>
             </Box>
-            <Box sx={{ mt: '30px' }}>
-              <Button
-              onClick={()=>navigate('/inforMationForPayment')}
+          ) : (
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                pt: { xs: '50px', sm: '70px', md: '90px', lg: '100px', xl: '120px' },
+                pb: { xs: '120px', sm: '150px', md: '180px', lg: '200px', xl: '286px' },
+                boxSizing: 'border-box',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              <Box sx={{
+
+              }}>
+                <img src={tikBigIcon} alt="" />
+              </Box>
+              <Typography
                 sx={{
-                  color: '#fff',
-                  fontSize: '16px',
-                  fontWeight: 700,
                   fontFamily: `${fontFamily}`,
-                   background:'#068488',
-                   boxShadow:' 0px 4px 4px 0px rgba(0, 0, 0, 0.16)',
-                   borderRadius:'8px' ,
-                   height:'46px',
-                   width:'100%',
-                   textTransform:'none'
+                  textAlign: 'center',
+                  color: '#00C5CC',
+                  fontSize: { xs: '18px', sm: '20px', md: '24px', lg: '28px' },
+                  fontWeight: 700,
+                  mt: '40px'
+                }}
+              >Thank you for registering!
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: `${fontFamily}`,
+                  textAlign: 'center',
+                  color: '#fff',
+                  fontSize: { xs: '12px', sm: '14px', md: '16px', lg: '18px' },
+                  fontWeight: 400,
+
+                }}
+              >Your information has been saved. </Typography>
+              <Box
+                sx={{
+                  mt: '40px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
                 }}
               >
-                Register Now
-              </Button>
+                <Button
+                  onClick={() => navigate('/inforMationForPayment')}
+                  sx={{
+                    fontFamily: `${fontFamily}`,
+                    textTransform: 'none',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    background: '#068488',
+                    boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.16)',
+                    color: "#fff",
+                    height: '46px',
+                    minWidth: { xs: '300px', sm: '440px', }
+                  }}
+                >Proceed to Payment
+                </Button>
+                <Button
+                  onClick={() => navigate('/')}
+                  sx={{
+                    fontFamily: `${fontFamily}`,
+                    textTransform: 'none',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    border: '1px solid #00C5CC',
+                    color: '#00C5CC',
+                    background: 'rgba(31, 31, 31, 0.15)',
+                    boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.16)'
+                  }}
+                >
+                  Back To Home
+                </Button>
+              </Box>
             </Box>
-          </Box>
-        </Box>
+          )
+        }
+
       </Box>
     </Box>
   )

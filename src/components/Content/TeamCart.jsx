@@ -8,11 +8,12 @@ const TeamCart = ({ desc, fullName, image, job }) => {
             sx={{
                 background: 'rgba(255, 255, 255, 0.10)',
                 boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.14)',
-                height: '521px',
+                height: {xs:'auto',sm:'521px'},
                 width: '310px',
                 boxSizing: 'border-box',
                 borderRadius: '16px',
-                overflow: 'hidden'
+                overflow: 'hidden',
+
             }}
         >
             <Box

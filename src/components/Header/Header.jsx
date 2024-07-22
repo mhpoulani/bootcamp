@@ -1,11 +1,14 @@
 import { Box, Button, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import bgImage from '../../assets/images/bgHeader.svg'
 import logo from '../../assets/images/logo.svg'
 import { Link, Element } from 'react-scroll';
 import { useNavigate } from 'react-router-dom';
 const Header = () => {
+    const [isLogin, setIsLogin] = useState(localStorage.getItem('token'))
+    const [id, setId] = useState(localStorage.getItem('userId'))
 
+    console.log(id);
     const navigate = useNavigate()
     const fontFamily = 'Suprime'
     const [headerItems, setHeaderItems] = useState(
@@ -55,6 +58,12 @@ const Header = () => {
 
         }
     }
+    const logOut = () => {
+        localStorage.clear('token')
+        setIsLogin(null)
+        navigate('/')
+    }
+
     return (
         <Box
             id='top'
@@ -76,7 +85,11 @@ const Header = () => {
                     pt: '48px',
                     position: 'fixed',
                     fontFamily: 'Inter',
-                    zIndex: 1400
+                    zIndex: 1400,
+                    background: 'linear-gradient(90deg, rgba(28, 27, 26, 0.80) 0%, rgba(65, 56, 56, 0.80) 100%)',
+                    width:'100%',
+                    pb:'17px'
+
 
                 }}
             >
@@ -86,6 +99,9 @@ const Header = () => {
                 <Box sx={{
                     display: 'flex',
                     alignItems: 'center',
+                    flexWrap: 'wrap',
+                    gap:2
+
                 }}>
                     {headerItems.map((item, index) => {
                         return (
@@ -100,7 +116,7 @@ const Header = () => {
                                         px: '40px',
                                         pb: '10px',
                                         cursor: 'pointer',
-                                        borderBottom: `${item.select ? '2px solid #FFFFFF' : '1px solid rgba(255, 255, 255, 0.20)'}`
+                                        borderBottom: `${item.select ? '2px solid #FFFFFF' : 'none'}`
                                     }}
                                 >
 
@@ -124,14 +140,15 @@ const Header = () => {
             </Box>
             <Box
                 sx={{
-                    pt: '203px',
-                    pl: '179px'
+                    position: 'absolute',
+                    top: '30%',
+                    left: { xs: '15%', sm: '5%', md: '10%' }
                 }}
             >
                 <Box
                     sx={{
-                        width: '534px',
-                        height: '402px',
+                        width: { xs: '200px', sm: '500px' },
+                        height: { xs: 'auto', sm: '402px' },
                         background: 'rgba(31, 31, 31, 0.30)',
                         border: '1px solid rgba(31, 31, 31, 0.20)',
                         py: '24px',
@@ -141,7 +158,7 @@ const Header = () => {
                 >
                     <Typography
                         sx={{
-                            fontSize: '32px',
+                            fontSize: { xs: '20px', sm: '24px', md: '28px', xl: '32px' },
                             color: '#fff',
                             fontWeight: 700,
                             fontFamily: `${fontFamily}`,
@@ -155,7 +172,7 @@ const Header = () => {
                         sx={{
                             color: '#e1e1e1',
                             fontWeight: 400,
-                            fontSize: '18px',
+                            fontSize: { xs: '12px', sm: '16px', md: '18px' },
                             mt: '16px',
                             fontFamily: `${fontFamily}`,
 
@@ -172,22 +189,65 @@ const Header = () => {
 
                         }}
                     >
-                        <Button
-                           onClick={()=>navigate('/register')}
-                            sx={{
-                                width: '100%',
-                                textTransform: 'none',
-                                fontSize: '16px',
-                                fontWeight: 700,
-                                color: '#fff',
-                                borderRadius: '8px',
-                                height: '46px',
-                                background: '#068488',
-                                fontFamily: `${fontFamily}`,
+                        {isLogin !== null ? (
+                            <>
+                                {
+                                    isLogin === 'true' ? (
+                                        <Button
+                                            onClick={logOut}
+                                            sx={{
+                                                width: '100%',
+                                                textTransform: 'none',
+                                                fontSize: '16px',
+                                                fontWeight: 700,
+                                                color: '#fff',
+                                                borderRadius: '8px',
+                                                height: '46px',
+                                                background: '#068488',
+                                                fontFamily: `${fontFamily}`,
+                                            }}
+                                        >
+                                            Log Out
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            onClick={() => navigate(`/inforMationForPayment/${id}`)}
+                                            sx={{
+                                                width: '100%',
+                                                textTransform: 'none',
+                                                fontSize: '16px',
+                                                fontWeight: 700,
+                                                color: '#fff',
+                                                borderRadius: '8px',
+                                                height: '46px',
+                                                background: '#068488',
+                                                fontFamily: `${fontFamily}`,
+                                            }}
+                                        >
+                                            Complete Registration
+                                        </Button>
+                                    )
+                                }
+                            </>
+                        ) : (
+                            <Button
+                                onClick={() => navigate('/registerOrLogin')}
+                                sx={{
+                                    width: '100%',
+                                    textTransform: 'none',
+                                    fontSize: '16px',
+                                    fontWeight: 700,
+                                    color: '#fff',
+                                    borderRadius: '8px',
+                                    height: '46px',
+                                    background: '#068488',
+                                    fontFamily: `${fontFamily}`,
 
-                            }}
-                        >Sign-Up Now
-                        </Button>
+                                }}
+                            >
+                                Sign-Up / Login
+                            </Button>
+                        )}
                         <Link to="courses" smooth={true}>
                             <Button
 

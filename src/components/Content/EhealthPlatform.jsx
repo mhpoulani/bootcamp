@@ -11,17 +11,18 @@ const EhealthPlatform = () => {
         height: { xs: 'auto', xl: '416px' },
         background: 'linear-gradient(90deg, rgba(31, 31, 31, 0.80) 0%, rgba(74, 74, 74, 0.80) 100%)',
         boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.14)',
-        py: '32px',
-        px: '104px',
+        py: { xs: '24px', sm: '32px' },
+        px: { xs: '20px', sm: '50px', md: '80px', lg: '90px', xl: '104px' },
         boxSizing: 'border-box',
         display: 'flex',
         justifyContent: 'space-between',
+        flexDirection: { xs: 'column-reverse', sm: 'row' }
 
       }}
     >
       <Box
         sx={{
-          width: '60%',
+          width: { xs: '100%', md: '60%' },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center'
@@ -29,11 +30,13 @@ const EhealthPlatform = () => {
       >
         <Typography
           sx={{
-            fontSize: '40px',
+            fontSize: { xs: '28px', sm: '30px', md: '32px', xl: '40px' },
             color: '#fff',
             fontWeight: 700,
             fontStyle: 'normal',
             fontFamily: `${fontFamily}`,
+            textAlign: { xs: 'center', sm: 'left' }
+
 
           }}
         >
@@ -42,12 +45,13 @@ const EhealthPlatform = () => {
         <Typography
           sx={{
             mt: '8px',
-            fontSize: '16px',
+            fontSize: {xs:'12px',sm:'14px',md:'16px'},
             color: '#e1e1e1',
             fontWeight: 400,
             lineHeight: 'normal',
             fontStyle: 'normal',
             fontFamily: `${fontFamily}`,
+            textAlign: { xs: 'center', sm: 'left' }
 
           }}
         >
@@ -55,7 +59,9 @@ const EhealthPlatform = () => {
 
         </Typography>
         <Box sx={{
-          mt: '24px'
+          mt: '24px',
+          display:'flex',
+          justifyContent:{xs:'center',sm:'start'}
         }}>
           <a href='https://vitruvianshield.com/'>
 
