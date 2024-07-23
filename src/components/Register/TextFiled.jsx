@@ -124,13 +124,13 @@ const TextFiled = ({ value, placeholder, inputname, type, setValue, lable, lable
                     if (inputname === 'phoneNumber') {
                         if (isPhoneValid(event.target.value) !== false) {
                             setHelper('')
-                            setRequierd({ ...requierd, PhoneNumberUtil: true })
+                            setRequierd({ ...requierd, phoneNumber: true })
                             setValue(event.target.value)
 
                         }
                         else {
                             setHelper('phone number is invalid')
-                            setRequierd({ ...requierd, PhoneNumberUtil: false })
+                            setRequierd({ ...requierd, phoneNumber: false })
                             setValue(event.target.value)
                         }
                     }
@@ -140,16 +140,16 @@ const TextFiled = ({ value, placeholder, inputname, type, setValue, lable, lable
                                 setHelper('email is invalid')
                                 setRequierd({ ...requierd, email: false })
                             }
+                            if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)) {
+                                setHelper('email is invalid')
+                                setRequierd({ ...requierd, email: false })
+                            }
+                            else {
+                                setValue(event.target.value);
+                                setRequierd({ ...requierd, email: true })
+                                setHelper('')
+                            }
                         }, 0);
-                        if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)) {
-                            setHelper('email is invalid')
-                            setRequierd({ ...requierd, email: false })
-                        }
-                        else {
-                            setValue(event.target.value);
-                            setRequierd({ ...requierd, email: true })
-                            setHelper('')
-                        }
                     }
                     if (inputname === 'city') {
                         setTimeout(() => {

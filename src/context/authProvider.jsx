@@ -14,9 +14,9 @@ const AuthProvider = ({ children }) => {
         try {
            return axios.post(`/register`, params).then((res) => {
                 return res.data
-            })
+            }).catch((err)=>err)
         } catch (error) {
-            return error
+            console.log(error.response);
         }
 
     }
@@ -24,7 +24,7 @@ const AuthProvider = ({ children }) => {
         try {
           return  axios.get(`login?q=${params}`).then((res) => {
                 return res
-            })
+            }).catch((err)=>err)
         } catch (error) {
             return error
         }

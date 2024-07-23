@@ -74,7 +74,8 @@ const Header = () => {
                 backgroundSize: 'cover',
                 height: '1000px',
                 width: '100%',
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
+                position:'relative'
             }}
         >
             <Box

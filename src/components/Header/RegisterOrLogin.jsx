@@ -15,7 +15,7 @@ const RegisterOrLogin = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height: '100vh',
+                minHeight:'100vh',
                 width: '100%',
                 boxSizing: 'border-box',
                 display: 'flex',
@@ -40,6 +40,7 @@ const RegisterOrLogin = () => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: '100%',
+                    minHeight:'100vh',
                     flexDirection: 'column',
                     boxSizing: 'border-box',
 

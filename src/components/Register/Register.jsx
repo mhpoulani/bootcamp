@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from '@mui/material'
+import { Box, Typography, Button, Container } from '@mui/material'
 import React, { useState } from 'react'
 import BgRegistration from '../../assets/images/BgRegistration.svg'
 import registerLogo from '../../assets/images/registerLogo.svg'
@@ -8,9 +8,12 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import toast from 'react-hot-toast';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import { useAuth } from '../../context/authProvider'
 
 
 const Register = () => {
+  const [id, setId] = useState(localStorage.getItem('userId'))
+  const { register } = useAuth()
   const navigate = useNavigate()
   const [state, setState] = useState(1)
   const fontFamily = 'Suprime'
@@ -74,8 +77,8 @@ const Register = () => {
     phoneNumber: true,
     city: true
 
-  }) 
-   const handleRegister = async () => {
+  })
+  const handleRegister = async () => {
     const information = {
       first_name: firstName,
       last_name: lastName,
@@ -83,19 +86,25 @@ const Register = () => {
       phone_number: phoneNumber,
       city: city
     }
-
-    const result = await axios.post('https://bootcamp.vitruvianshield.com/api/register', information)
+    toast.loading('loading')
+    const result = await register(information)
     console.log(result);
-    if (result.status === 201) {
-      toast.success(result.data.message)
+    console.log(result.response);
+    if (result.message === 'Registration successful') {
+      toast.dismiss()
+      toast.success(result.message)
+      localStorage.setItem('userId', result.user.id)
+      setId(result.user.id)
       setState(2)
     }
     else {
-      toast.error(result.data.message)
+      toast.dismiss()
+      console.log(result.response.data.error);
+      toast.error(result.response.data.error)
     }
-
   }
   return (
+
     <Box
       sx={{
         pt: { xs: '24px', md: '0' },
@@ -103,28 +112,30 @@ const Register = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height: '100vh',
+        minHeight: '100vh',
+
         width: '100%',
         boxSizing: 'border-box',
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-between',
-        gap: { xs: '20px', md: '0' }
+        gap: { xs: '20px', md: '0' },
+        position: 'relative'
 
 
       }}
     >
       <Box
-      onClick={()=>navigate(-1)}
-      sx={{
-        position:'absolute',
-        cursor:'pointer',
-        left:'3%',
-        top:'5%',
-        color:'#fff'
-      }}
+        onClick={() => navigate(-1)}
+        sx={{
+          position: 'absolute',
+          cursor: 'pointer',
+          left: '3%',
+          top: '5%',
+          color: '#fff'
+        }}
       >
-        <KeyboardBackspaceIcon color='inherit'/>
+        <KeyboardBackspaceIcon color='inherit' />
       </Box>
       <Box
         sx={{
@@ -134,6 +145,7 @@ const Register = () => {
           justifyContent: 'center',
           alignItems: 'center',
           height: '100%',
+          minHeight: '100vh',
           flexDirection: 'column',
           boxSizing: 'border-box',
 
@@ -169,6 +181,7 @@ const Register = () => {
             fontSize: { xs: '12px', sm: '16px', md: '18px' },
             fontWeight: 400,
             fontFamily: `${fontFamily}`,
+            textAlign: 'center'
 
 
           }}
@@ -181,6 +194,7 @@ const Register = () => {
           background: 'rgba(31, 31, 31, 0.70)',
           boxShadow: '-4px 0px 36px 0px rgba(0, 0, 0, 0.25)',
           height: '100%',
+          minHeight: '100vh',
           width: { xs: '100%', md: '50%', lg: '40', xl: '35%' },
           px: { xs: '40px', md: '20px', xl: '80px' },
           pt: { xs: '40px', md: '20px', xl: '80px' },
@@ -233,6 +247,7 @@ const Register = () => {
                 <Box sx={{ mt: '30px' }}>
                   <Button
                     onClick={handleRegister}
+                    disabled={!requierd.city || !requierd.email || !requierd.firstName || !requierd.lastName || !requierd.phoneNumber ? true : false}
                     sx={{
                       color: '#fff',
                       fontSize: '16px',
@@ -298,7 +313,7 @@ const Register = () => {
                 }}
               >
                 <Button
-                  onClick={() => navigate('/inforMationForPayment')}
+                  onClick={() => navigate(`/inforMationForPayment/${id}`)}
                   sx={{
                     fontFamily: `${fontFamily}`,
                     textTransform: 'none',

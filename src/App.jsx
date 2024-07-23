@@ -1,6 +1,6 @@
 import Header from './components/Header/Header'
 import Content from './components/Content/Content'
-import { Box } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import Footer from './components/Footer/Footer'
 import { Routes, Route, Outlet } from "react-router-dom";
 import Register from './components/Register/Register';
@@ -14,14 +14,16 @@ function App() {
     return (
       <>
         <Header />
-        <Outlet />
+        <Container maxWidth='2xl'>
+          <Outlet />
+        </Container>
         <Footer />
       </>
     )
   }
   return (
     <Box>
-       <Toaster/>
+      <Toaster />
       <Routes>
         <Route path="/" element={<Dashboard />}
           children={

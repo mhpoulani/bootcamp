@@ -1,4 +1,4 @@
-import { Box, Typography,Button } from '@mui/material'
+import { Box, Typography, Button } from '@mui/material'
 import React, { useState } from 'react'
 import BgRegistration from '../../assets/images/BgRegistration.svg'
 import TextFiled from './TextFiled'
@@ -9,22 +9,28 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 
 const Login = () => {
-    const fontFamily='Suprime'
-    const [value,setValue]=useState('')
-   const {login}=useAuth()
-   const navigate=useNavigate()
-    const handleLogin=async()=>{
-        const data=await login(value)
-         console.log(data.response);
-         if(data.data.user){
-            localStorage.setItem('token',data.data.user.image_uploaded)
-            localStorage.setItem('userId',data.data.user.id)
+    const [requierd,setRequierd]=useState({
+        phoneNumber:false,
+        email:false
+    })
+    const fontFamily = 'Suprime'
+    const [value, setValue] = useState('')
+    const { login } = useAuth()
+    const navigate = useNavigate()
+    const handleLogin = async () => {
+        toast.loading('loading')
+        const data = await login(value)        
+        if (data.data) {
+            localStorage.setItem('token', data.data.user.image_uploaded)
+            localStorage.setItem('userId', data.data.user.id)
+            toast.dismiss()
             toast.success('Welcome')
             navigate('/')
-         }
-         else{
-          toast.error('User not found')
-         }
+        }
+        else if(data.response) {
+            toast.dismiss()
+            toast.error(data.response.data.message)
+        }
     }
     return (
         <Box
@@ -34,26 +40,26 @@ const Login = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height: '100vh',
+                minHeight: '100vh',
                 width: '100%',
                 boxSizing: 'border-box',
                 display: 'flex',
-                justifyContent:'center',
-                alignItems:'center'
+                justifyContent: 'center',
+                alignItems: 'center'
             }}
         >
-                  <Box
-      onClick={()=>navigate(-1)}
-      sx={{
-        position:'absolute',
-        cursor:'pointer',
-        left:'3%',
-        top:'5%',
-        color:'#fff'
-      }}
-      >
-        <KeyboardBackspaceIcon color='inherit'/>
-      </Box>
+            <Box
+                onClick={() => navigate(-1)}
+                sx={{
+                    position: 'absolute',
+                    cursor: 'pointer',
+                    left: '3%',
+                    top: '5%',
+                    color: '#fff'
+                }}
+            >
+                <KeyboardBackspaceIcon color='inherit' />
+            </Box>
             <Box
                 sx={{
                     pt: { xs: '20px', sm: '30px', md: '40px', xl: '56px' },
@@ -62,40 +68,41 @@ const Login = () => {
                     borderRadius: '40px',
                     boxShadow: '-4px 0px 36px 0px rgba(0, 0, 0, 0.25)',
                     background: 'rgba(31, 31, 31, 0.70)',
-                    minWidth:{xs:'300px',sm:'536px'},
-                    boxSizing:'border-box'
+                    minWidth: { xs: '300px', sm: '536px' },
+                    boxSizing: 'border-box'
                 }}
             >
                 <Typography
                     sx={{
                         color: '#00F0F8',
                         fontSize: { xs: '20px', sm: '24px', md: '28px', xl: '32px' },
-                        fontFamily:`${fontFamily}`,
-                        fontWeight:700,
-                        textAlign:'center',
+                        fontFamily: `${fontFamily}`,
+                        fontWeight: 700,
+                        textAlign: 'center',
                     }}
                 >
                     Login
                 </Typography>
                 <Box
-                sx={{
-                    mt:'32px',
-                }}
+                    sx={{
+                        mt: '32px',
+                    }}
                 >
-                    <TextFiled value-={value} setValue={setValue} placeholder='Your Email or hone Number ' lable='Email/ Phone Number' inputname={value.includes('@')===true?'email':'phone_number'}/>
+                    <TextFiled setRequierd={setRequierd} requierd={requierd} value-={value} setValue={setValue} placeholder='Your Email or hone Number ' lable='Email/ Phone Number' inputname={value.includes('+') === false ? 'email' : 'phoneNumber'} />
                 </Box>
                 <Button
-                onClick={handleLogin}
-                sx={{
-                    fontFamily:`${fontFamily}`,
-                    color:'#fff',
-                    background:'#068488',
-                    borderRadius:'8px',
-                    width:'100%',
-                    mt:'24px',
-                    height:'46px',
-                    
-                }}
+                    onClick={handleLogin}
+                    disabled={requierd.email===true ||requierd.phoneNumber===true?false:true}
+                    sx={{
+                        fontFamily: `${fontFamily}`,
+                        color: '#fff',
+                        background: '#068488',
+                        borderRadius: '8px',
+                        width: '100%',
+                        mt: '24px',
+                        height: '46px',
+
+                    }}
                 >
                     LOGIN
                 </Button>
