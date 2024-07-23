@@ -10,28 +10,11 @@ import posterP from '../../assets/images/posterP.png'
 import posterE from '../../assets/images/posterE.png'
 import fanavariNovinLogo from '../../assets/images/fanavariNovinLogo.svg'
 import azadUniLogo from '../../assets/images/azadUniLogo.svg'
+import {saveAs} from 'file-saver'
 
 const Footer = () => {
   const FontFamily = 'Suprime'
-  const [image, setImage] = useState(null);
-  const [imageP, setImageP] = useState(null);
 
-  const handleDownload = () => {
-    const blob = new Blob([posterE], { type: 'image/png' });
-    const url = URL.createObjectURL(blob);
-    setImage(url);
-    const blob1 = new Blob([posterE], { type: 'image/png' });
-    const url2 = URL.createObjectURL(blob);
-    setImageP(url);
-  };
-  useEffect(() => {
-    const blob = new Blob([posterE], { type: 'image/png' });
-    const url = URL.createObjectURL(blob);
-    setImage(url);
-    const blob1 = new Blob([posterE], { type: 'image/png' });
-    const url2 = URL.createObjectURL(blob1);
-    setImageP(url2);
-  }, [])
   return (
     <Box sx={{ pt: '56px', pb: '40px', px: '80px' }}>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between',gap:'16px' }}>
@@ -67,31 +50,29 @@ const Footer = () => {
             >
               Bootcamp Poster
             </Typography>
-            <a
-              href={'http://localhost:3001/' + posterE} download
-            >
 
-              <Typography
+              <Typography onClick={() => saveAs(posterE)}
                 sx={{
                   fontFamily: `${FontFamily}`,
                   color: '#00C5CC',
                   fontSize: '12px',
-                  fontWeight: 400
+                  fontWeight: 400,
+                  cursor: 'pointer',
+                  textDecoration: 'underline'
                 }}
               >English
               </Typography>
-            </a>
-            <a href={'http://localhost:3001/' + posterP} download>
 
-              <Typography
+              <Typography onClick={() => saveAs(posterP)}
                 sx={{
                   fontFamily: `${FontFamily}`,
                   color: '#00C5CC',
                   fontSize: '12px',
-                  fontWeight: 400
+                  fontWeight: 400,
+                  cursor: 'pointer',
+                  textDecoration: 'underline'
                 }}
               >Farsi</Typography>
-            </a>
           </Box>
 
         </Box>
