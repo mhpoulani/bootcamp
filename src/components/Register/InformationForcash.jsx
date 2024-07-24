@@ -52,16 +52,18 @@ const InformationForcash = () => {
     const onChangeHandler = async (e) => {
         const file = e.target.files[0];
         console.log(file);
-
+        toast.loading('loding')
         const base64 = await convertFileToBase64(file)
         console.log(base64);
         const result = await uploadImage({ id: id, image: base64 })
         if (result.data.message === 'Image uploaded successfully') {
             localStorage.setItem('token', 'true')
+            toast.dismiss()
             toast.success('Image uploaded successfully')
             navigate('/')
         }
         else {
+            toast.dismiss()
             toast.error('/some thine is wrong')
         }
         console.log(result);

@@ -14,9 +14,7 @@ function App() {
     return (
       <>
         <Header />
-        <Container maxWidth='2xl'>
           <Outlet />
-        </Container>
         <Footer />
       </>
     )

@@ -3,6 +3,7 @@ import React from 'react'
 import EhealthPlatform from './EhealthPlatform'
 import OurTeam from './OurTeam'
 import Courses from './Courses/Courses'
+import TimeTable from './TimeTable/TimeTable'
 
 const Content = () => {
   return (
@@ -10,6 +11,7 @@ const Content = () => {
        <EhealthPlatform/>
        <OurTeam/>
        <Courses/>
+       <TimeTable/>
 
     </Box>
   )
