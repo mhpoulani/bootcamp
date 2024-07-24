@@ -10,6 +10,7 @@ import posterP from '../../assets/images/posterP.png'
 import posterE from '../../assets/images/posterE.png'
 import fanavariNovinLogo from '../../assets/images/fanavariNovinLogo.svg'
 import azadUniLogo from '../../assets/images/azadUniLogo.svg'
+import QRCodeVitru from '../../assets/images/QRCodeVitru.jpg'
 import { saveAs } from 'file-saver'
 
 const Footer = () => {
@@ -115,8 +116,7 @@ const Footer = () => {
               <Typography
                 sx={{ color: '#d9d9d9', fontSize: '12px', fontWeight: 400, fontFamily: `${FontFamily}` }}
               >
-                Amol, Talghani Street, Abazar 35, Central Building
-                of Engineering Modern Technologies, Central Site of the Faculty
+                Faculty of Engineering Modern Technologies, Amol University of Special Modern Technologies, Amol, Iran
               </Typography>
             </Box>
           </a>
@@ -133,8 +133,8 @@ const Footer = () => {
           >Azad University Location </Typography>
           <Box sx={{ cursor: 'pointer' }}>
             <a href="https://www.google.com/maps/place/Amol+University+of+Special+Modern+Technologies/@36.4553248,52.3521051,19.5z/data=!4m14!1m7!3m6!1s0x3f8fbd5270a2d8ad:0x8e269c376fdd4c6f!2z2YHZhiDYotmI2LHbjCDZhtmI24zZhiDZiNit24zYryDYp9qp2KjYsduM!8m2!3d36.4555064!4d52.3512103!16s%2Fg%2F11c7t6h65l!3m5!1s0x3f8fbd527040a94b:0xe9dd3370dd7e561f!8m2!3d36.4555174!4d52.3514903!16s%2Fg%2F11b62ss3wh?hl=fa&entry=ttu">
-              
-              <img src={locImage} alt="" style={{width:'223px',height:'100px',borderRadius:'10px'}} />
+
+              <img src={locImage} alt="" style={{ width: '223px', height: '100px', borderRadius: '10px' }} />
             </a>
           </Box>
         </Box>
@@ -160,6 +160,30 @@ const Footer = () => {
             justifyContent: 'center'
           }}>
             <img src={QRCode} alt="" />
+          </Box>
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: 500,
+              fontFamily: `${FontFamily}`,
+              mb: '16px'
+            }}
+          >
+            Scan It
+          </Typography>
+          <Box sx={{
+            border: '1px dashed rgba(255, 255, 255, 0.10)',
+            borderRadius: '8px',
+            px: '10px',
+            py: '10px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <img src={QRCodeVitru} alt="" style={{ width: '88px', height: '88px' }} />
           </Box>
         </Box>
       </Box>
