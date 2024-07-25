@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const [isLogin, setIsLogin] = useState(localStorage.getItem('token'))
     const [id, setId] = useState(localStorage.getItem('userId'))
-
+    const [headerId, setHeaderId] = useState('top')
     console.log(id);
     const navigate = useNavigate()
     const fontFamily = 'Suprime'
@@ -63,7 +63,12 @@ const Header = () => {
         setIsLogin(null)
         navigate('/')
     }
+  const [activeSection, setActiveSection] = useState('');
 
+  const handleSetActive = (to) => {
+    setActiveSection(to);
+  };
+  console.log(activeSection);
     return (
         <Box
             id='top'
@@ -75,7 +80,7 @@ const Header = () => {
                 height: '1000px',
                 width: '100%',
                 boxSizing: 'border-box',
-                position:'relative'
+                position: 'relative'
             }}
         >
             <Box
@@ -88,8 +93,8 @@ const Header = () => {
                     fontFamily: 'Inter',
                     zIndex: 1400,
                     background: 'linear-gradient(90deg, rgba(28, 27, 26, 0.80) 0%, rgba(65, 56, 56, 0.80) 100%)',
-                    width:'100%',
-                    pb:'17px'
+                    width: '100%',
+                    pb: '17px'
 
 
                 }}
@@ -101,7 +106,7 @@ const Header = () => {
                     display: 'flex',
                     alignItems: 'center',
                     flexWrap: 'wrap',
-                    gap:2
+                    gap: 2
 
                 }}>
                     {headerItems.map((item, index) => {
@@ -110,6 +115,9 @@ const Header = () => {
                                 key={index}
                                 to={item.link}
                                 smooth={true}
+                                spy={true}
+                                onSetActive={handleSetActive}
+
                             >
                                 <Box
                                     onClick={() => handleClick(item.id)}
@@ -117,7 +125,7 @@ const Header = () => {
                                         px: '40px',
                                         pb: '10px',
                                         cursor: 'pointer',
-                                        borderBottom: `${item.select ? '2px solid #FFFFFF' : 'none'}`
+                                        borderBottom: `${item.link===activeSection ? '2px solid #FFFFFF' : 'none'}`,
                                     }}
                                 >
 
