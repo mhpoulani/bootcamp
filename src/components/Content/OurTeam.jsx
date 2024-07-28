@@ -3,6 +3,7 @@ import React from 'react'
 import bgOurTeam from '../../assets/images/bgImageOurTeam.svg'
 import sogandProf from '../../assets/images/sogandProf.jpg'
 import mohammadProf from '../../assets/images/mohammadProf.jpg'
+import rezaProf from '../../assets/images/rezaProf.jpg'
 import TeamCart from './TeamCart'
 export const OurTeam = () => {
   const fontFamily = 'Suprime'
@@ -31,7 +32,7 @@ export const OurTeam = () => {
     {
       fullName: 'Reza Razifar',
       job: 'Backend Developer',
-      image: null,
+      image: rezaProf,
       desc: "Reza Rafifar holds a bachelor's degree in Computer Engineering from Amol University of Innovative Technologies. Reza started programming in 2018 (before entering university) and managed to enter the job market after a year of effort. Reza has four years of experience working in international companies and has been a senior backend programmer at Vitruevin Shield for a year now."
     },
   ]

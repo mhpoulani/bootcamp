@@ -35,19 +35,21 @@ const Header = () => {
             },
             {
                 id: 4,
-                name: 'Assignments',
+                name: 'Courses Plan',
+                link: 'courses',
+                select: false
+            },
+            {
+                id: 5,
+                name: 'Time Table',
                 select: false,
-                disable: true
+                disable: true,
+                link: 'timeTable'
 
 
             },
 
-            {
-                id: 5,
-                name: 'Courses',
 
-                select: false
-            }
         ]
     )
 
@@ -63,12 +65,12 @@ const Header = () => {
         setIsLogin(null)
         navigate('/')
     }
-  const [activeSection, setActiveSection] = useState('');
+    const [activeSection, setActiveSection] = useState('');
 
-  const handleSetActive = (to) => {
-    setActiveSection(to);
-  };
-  console.log(activeSection);
+    const handleSetActive = (to) => {
+        setActiveSection(to);
+    };
+    console.log(activeSection);
     return (
         <Box
             id='top'
@@ -125,13 +127,13 @@ const Header = () => {
                                         px: '40px',
                                         pb: '10px',
                                         cursor: 'pointer',
-                                        borderBottom: `${item.link===activeSection ? '2px solid #FFFFFF' : 'none'}`,
+                                        borderBottom: `${item.link === activeSection ? '2px solid #FFFFFF' : 'none'}`,
                                     }}
                                 >
 
                                     <Typography
                                         sx={{
-                                            color: `${item.id !== 5 && item.id !== 4 && item.id !== 6 ? 'rgba(255, 255, 255, 0.90)' : 'rgba(255, 255, 255, 0.60)'}`,
+                                            color: 'rgba(255, 255, 255, 0.90)',
                                             fontSize: '18px',
                                             fontWeight: 500,
                                             fontFamily: `${fontFamily}`,

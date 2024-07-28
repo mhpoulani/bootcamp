@@ -32,6 +32,7 @@ const TimeTable = () => {
 
     return (
         <Box
+        id='timeTable'
             sx={{
                 pt: { xs: '24px', md: '40px', },
                 px: { xs: '10px', sm: '50px', md: '20px', lg: '40px', xl: '139px' },
